@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormCard renders without crashing 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "marginBottom": 25,
+      "width": "75%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 10,
+        "paddingVertical": 20,
+      }
+    }
+  >
+    <Text
+      numberOfLines={3}
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 22,
+          "height": 80,
+        }
+      }
+    >
+      Personal Details
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "borderTopWidth": 1,
+        "padding": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 15,
+        }
+      }
+    >
+      Created on:
+       
+      01/01/2019 12:00:00
+    </Text>
+  </View>
+</View>
+`;
