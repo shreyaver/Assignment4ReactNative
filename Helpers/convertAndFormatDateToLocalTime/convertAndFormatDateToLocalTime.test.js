@@ -2,6 +2,6 @@ import convertAndFormatDateToLocalTime from './convertAndFormatDateToLocalTime';
 
 describe('convertAndFormatDateToLocalTime()', () => {
   it('returns formatted date converted to local time', () => {
-    expect(convertAndFormatDateToLocalTime(new Date(2019, 2, 27))).toEqual('27/03/2019 00:00:00');
+    expect(convertAndFormatDateToLocalTime('2019-01-01T17:30:00.000Z')).toEqual('01/01/2019 23:00:00');
   });
 });

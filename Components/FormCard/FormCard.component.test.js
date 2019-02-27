@@ -5,7 +5,7 @@ import FormCard from './FormCard.component';
 describe('FormCard', () => {
   const mockFormCardData = {
       name: 'Personal Details',
-      createdAt: new Date('2019-01-01T12:00:00'),
+      createdAt: "2019-01-01T06:30:00.000Z",
   };
   it('renders without crashing', () => {
     const formCard = renderer.create(<FormCard form={mockFormCardData}/>).toJSON();

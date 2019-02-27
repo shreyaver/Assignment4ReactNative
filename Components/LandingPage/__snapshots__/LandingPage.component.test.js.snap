@@ -79,46 +79,39 @@ exports[`LandingPage renders without crashing 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
+        "alignItems": "center",
+        "backgroundColor": "#3F51B5",
+        "borderRadius": 35,
+        "bottom": 40,
+        "height": 70,
+        "justifyContent": "center",
         "opacity": 1,
+        "position": "absolute",
+        "right": 40,
+        "width": 70,
       }
     }
   >
-    <View
+    <Text
+      allowFontScaling={false}
       style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#3F51B5",
-          "borderRadius": 35,
-          "bottom": 40,
-          "height": 70,
-          "justifyContent": "center",
-          "position": "absolute",
-          "right": 40,
-          "width": 70,
-        }
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 30,
+          },
+          undefined,
+          Object {
+            "fontFamily": "Entypo",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
       }
     >
-      <Text
-        allowFontScaling={false}
-        style={
-          Array [
-            Object {
-              "color": "white",
-              "fontSize": 30,
-            },
-            undefined,
-            Object {
-              "fontFamily": "Entypo",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-            Object {},
-          ]
-        }
-      >
-        
-      </Text>
-    </View>
+      
+    </Text>
   </View>
 </RCTSafeAreaView>
 `;

@@ -9,15 +9,20 @@
 
 import React, { Component } from 'react';
 import {
-  SafeAreaView, Text, TouchableOpacity, FlatList, Platform, ScrollView, View,
+  SafeAreaView, Text, TouchableOpacity, Platform, ScrollView, View,
 } from 'react-native';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import styles from './LandingPage.component.stylesheet';
 import Icon from "react-native-vector-icons/Entypo";
 import { GET_FORMS_URL_IOS, GET_FORMS_URL_ANDROID } from '../../config';
 import FormCard from '../FormCard/FormCard.component';
 
 export default class LandingPage extends Component {
+  static navigationOptions = {
+    title: 'Home',
+  };
+  
   state = { forms: []};
 
   async componentDidMount() {
@@ -31,6 +36,7 @@ export default class LandingPage extends Component {
 
   render() {
     const formCards = this.state.forms.map((form, index) => (<FormCard form={form} key={index} />));
+    const { navigation } = this.props;
     return (
       <SafeAreaView style={styles.safeAreaView}>
           <View style={styles.header}>
@@ -45,16 +51,17 @@ export default class LandingPage extends Component {
           <ScrollView contentContainerStyle={styles.screenContent}>
             {formCards}
           </ScrollView>
-          <TouchableOpacity>
-            <View style={styles.createFormButton}>
+          <TouchableOpacity style={styles.createFormButton} onPress={() => navigation.navigate('NewForm')}>
               <Icon                            
                 name="plus"
                 size={30}      
                 color="white"      
               />    
-            </View>    
           </TouchableOpacity>
       </SafeAreaView>
     );
   }
 }
+LandingPage.propTypes = {
+  navigation: PropTypes.shape({ navigate: PropTypes.func.isRequired }).isRequired,
+};

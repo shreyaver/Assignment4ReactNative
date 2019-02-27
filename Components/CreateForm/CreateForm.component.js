@@ -11,10 +11,15 @@ import React, { Component } from 'react';
 import {
   SafeAreaView, Text, TouchableOpacity, TextInput, ScrollView, View,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './CreateForm.component.stylesheet';
 import Icon from "react-native-vector-icons/Entypo";
 
 export default class CreateForm extends Component {
+  static navigationOptions = {
+    title: 'NewForm',
+  };
+
   state = { 
       name: '',
       fields: []};
@@ -53,3 +58,6 @@ export default class CreateForm extends Component {
     );
   }
 }
+CreateForm.propTypes = {
+  navigation: PropTypes.shape({ navigate: PropTypes.func.isRequired }).isRequired,
+};

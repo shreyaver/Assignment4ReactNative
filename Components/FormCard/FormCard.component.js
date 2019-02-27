@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './FormCard.component.stylesheet';
-import convertAndFormatDateToLocalTime from '../../helpers/convertAndFormatDateToLocalTime/convertAndFormatDateToLocalTime';
+import convertAndFormatDateToLocalTime from '../../Helpers/convertAndFormatDateToLocalTime/convertAndFormatDateToLocalTime';
 
 export default class FormCard extends Component {
   render() {
@@ -29,6 +29,6 @@ export default class FormCard extends Component {
 FormCard.propTypes = {
   form: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    createdAt: PropTypes.instanceOf(Date).isRequired,
+    createdAt: PropTypes.string.isRequired,
   }).isRequired,
 };

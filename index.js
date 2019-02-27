@@ -4,7 +4,7 @@
  */
 
 import { AppRegistry } from 'react-native';
-import LandingPage from './Components/LandingPage/LandingPage.component';
+import MainNavigator from './Components/MainNavigator/MainNavigator.component';
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => LandingPage);
+AppRegistry.registerComponent(appName, () => MainNavigator);

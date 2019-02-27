@@ -6,33 +6,35 @@ import LandingPage from './LandingPage.component';
 
 describe('LandingPage', () => {
   let mockGetForms;
+  let navigation;
   const mockFormData = [
     {
       name: 'Personal Details',
-      createdAt: new Date('2019-01-01T12:00:00'),
+      createdAt: "2019-01-01T12:00:00.000Z",
     }, {
       name: 'Code Academy Feedback 2019',
-      createdAt: new Date('2019-01-01T12:00:00'),
+      createdAt: "2019-01-01T12:00:00.000Z",
     },
   ]
   beforeAll(() => {
     mockGetForms = jest.spyOn(Axios, 'get');
     mockGetForms.mockImplementation(() => Promise.resolve({ data: mockFormData }));
+    navigation = { navigate: jest.fn() };
   });
   afterAll(() => {
     jest.restoreAllMocks();
   });
   it('renders without crashing', () => {
-    const landingPage = renderer.create(<LandingPage />).toJSON();
+    const landingPage = renderer.create(<LandingPage navigation={navigation} />).toJSON();
     expect(landingPage).toMatchSnapshot();
   });
   it('sets initial state to empty array for "forms"', () => {
-    const wrapper = shallow(<LandingPage />);
+    const wrapper = shallow(<LandingPage navigation={navigation} />);
     expect(wrapper.instance().state).toEqual({ forms: [] });
   });
 
   it('sets state to fetched data after mounting', async () => {
-    const wrapper = shallow(<LandingPage />);
+    const wrapper = shallow(<LandingPage navigation={navigation} />);
     await wrapper.instance().componentDidMount();
     expect(wrapper.instance().state).toEqual({ forms: mockFormData });
   });
