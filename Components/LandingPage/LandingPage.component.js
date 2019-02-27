@@ -51,7 +51,7 @@ export default class LandingPage extends Component {
           <ScrollView contentContainerStyle={styles.screenContent}>
             {formCards}
           </ScrollView>
-          <TouchableOpacity style={styles.createFormButton} onPress={() => navigation.navigate('NewForm')}>
+          <TouchableOpacity style={styles.createFormButton} testID="navToNewForm" onPress={() => navigation.navigate('NewForm')}>
               <Icon                            
                 name="plus"
                 size={30}      

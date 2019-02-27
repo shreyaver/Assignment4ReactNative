@@ -38,5 +38,11 @@ describe('LandingPage', () => {
     await wrapper.instance().componentDidMount();
     expect(wrapper.instance().state).toEqual({ forms: mockFormData });
   });
-  
+
+  it('directs to "NewForm" page on clicking button in header', () => {
+    const wrapper = shallow(<LandingPage navigation={navigation} />);
+    expect(navigation.navigate).not.toHaveBeenCalled();
+    wrapper.find({ testID: 'navToNewForm' }).simulate('press');
+    expect(navigation.navigate).toHaveBeenCalledWith('NewForm');
+  });
 });

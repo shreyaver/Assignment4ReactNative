@@ -5,7 +5,7 @@ exports[`CreateForm renders without crashing 1`] = `
   emulateUnlessSupported={true}
   style={
     Object {
-      "backgroundColor": "#3F51B5",
+      "backgroundColor": "transparent",
       "flex": 1,
     }
   }
@@ -76,7 +76,7 @@ exports[`CreateForm renders without crashing 1`] = `
       >
         <TextInput
           allowFontScaling={true}
-          maxLength={255}
+          maxLength={250}
           multiline={true}
           onChangeText={[Function]}
           placeholder="Form Name"
@@ -86,10 +86,15 @@ exports[`CreateForm renders without crashing 1`] = `
               "borderBottomWidth": 1,
               "borderColor": "grey",
               "fontSize": 20,
+              "marginBottom": 10,
             }
           }
+          testID="formName"
           underlineColorAndroid="transparent"
         />
+        <Text>
+          
+        </Text>
         <View
           accessible={true}
           isTVSelectable={true}
@@ -104,12 +109,13 @@ exports[`CreateForm renders without crashing 1`] = `
               "alignItems": "center",
               "alignSelf": "flex-end",
               "backgroundColor": "#3F51B5",
-              "marginTop": 30,
+              "marginTop": 10,
               "opacity": 1,
               "paddingVertical": 10,
               "width": 120,
             }
           }
+          testID="addFieldButton"
         >
           <Text
             style={
@@ -122,6 +128,48 @@ exports[`CreateForm renders without crashing 1`] = `
             ADD FIELD
           </Text>
         </View>
+        <View
+          style={
+            Object {
+              "paddingVertical": 20,
+            }
+          }
+          testID="fieldsView"
+        />
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#3F51B5",
+            "bottom": 0,
+            "height": 70,
+            "justifyContent": "center",
+            "opacity": 1,
+            "position": "absolute",
+            "width": "100%",
+          }
+        }
+        testID="submitButton"
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 18,
+            }
+          }
+        >
+          SAVE
+        </Text>
       </View>
     </View>
   </RCTScrollView>

@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   safeAreaView: {
     flex: 1,
-    backgroundColor: '#3F51B5',
   },
   header: {
     height: 90,
